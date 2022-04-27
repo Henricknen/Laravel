@@ -26,5 +26,16 @@ Route::get('/contato', function () {
 });
 
 Route::get('/produtos', function () {
-    return view('produtos');
+
+    $busca = request('search');     /* request permite que o usuario faça uma busca */
+
+    return view('produtos', ['busca' => $busca]);       /* a busca feita sera imprimida na tela do navegador */
+});
+
+Route::get('/produtos/{id}', function ($id) {      /* esta rota espera um id so usuario */
+    return view('produto', ['id' => $id]);        /* enviando o id para view */
+});
+
+Route::get('/produtos_opcional/{id?}', function ($id = 1) {      /* o parametro é opcional se não for digitado nada pelo usuario, imprimira o produto pré adicionado 1 */
+    return view('produto', ['id' => $id]);
 });
