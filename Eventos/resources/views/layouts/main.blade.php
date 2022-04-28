@@ -30,15 +30,15 @@
                             </li>
 
                             <li class="nav-item">
-                                <a href="/" class="nav-link">Criar Eventos</a>
+                                <a href="/eventos/criacao" class="nav-link">Criar Eventos</a>
                             </li>
 
                             <li class="nav-item">
-                                <a href="/" class="nav-link">Entrar</a>
+                                <a href="/eventos/produtos" class="nav-link">Produtos</a>
                             </li>
 
                             <li class="nav-item">
-                                <a href="/" class="nav-link">Cadastrar</a>
+                                <a href="/eventos/contato" class="nav-link">Contato</a>
                             </li>
                         </ul>
 

@@ -12,30 +12,10 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+use App\Http\Controllers\EventController;       /* importando o controller EventController */
 
-Route::get('/', function () {
+Route::get('/', [EventController::class, 'index']);
+Route::get('/eventos/criacao', [EventController::class, 'criacao']);
+Route::get('/eventos/produtos', [EventController::class, 'produtos']);
+Route::get('/eventos/contato', [EventController::class, 'contato']);
 
-    $nome = "Luis Henrique S F";
-    $idade = 30;
-
-    return view('welcome', ['nome' => $nome, 'idade' => $idade]);
-});
-
-Route::get('/contato', function () {
-    return view('contato');
-});
-
-Route::get('/produtos', function () {
-
-    $busca = request('search');     /* request permite que o usuario faça uma busca */
-
-    return view('produtos', ['busca' => $busca]);       /* a busca feita sera imprimida na tela do navegador */
-});
-
-Route::get('/produtos/{id}', function ($id) {      /* esta rota espera um id so usuario */
-    return view('produto', ['id' => $id]);        /* enviando o id para view */
-});
-
-Route::get('/produtos_opcional/{id?}', function ($id = 1) {      /* o parametro é opcional se não for digitado nada pelo usuario, imprimira o produto pré adicionado 1 */
-    return view('produto', ['id' => $id]);
-});
