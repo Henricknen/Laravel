@@ -3,5 +3,9 @@
 @section('title', 'home')
 
 @section('content')
-<h1>Home</h1>
+
+@foreach ($events as $event)
+    <p>{{ $event->titulo }} -- {{ $event->descricao }} -- {{ $event->cidade }}</p>
+@endforeach
+
 @endsection
