@@ -22,7 +22,7 @@
             <nav class="navbar navbar-expand-lg navbar-light">
                 <div class="collapse navbar-collapse" id="navbar">
                     <a href="/" class="navbar-brand">
-                        <img src="/img/show.jpg" alt="logo">
+                        <img src="/img/dj.jpeg" alt="logo">
                     </a>
                         <ul class="navbar-nav">
                             <li class="nav-item">
