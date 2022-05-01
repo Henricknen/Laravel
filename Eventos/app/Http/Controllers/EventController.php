@@ -30,7 +30,7 @@ class EventController extends Controller
 
         $event->save();
 
-        return redirect('/');
+        return redirect('/')->with('msg', 'Evento marcado com sucesso !!!');       // criando a flash messages
     }
 
     public function contato() {
