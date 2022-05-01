@@ -24,7 +24,7 @@
                 <p class="card-date">29/04/2022</p>
                 <h5 class="card-title">{{ $event->titulo }}</h5>
                 <p class="card-participantes">X participantes</p>
-                <a href="#" class="btn btn-primary">Saber mais</a>
+                <a href="/eventos/{{ $event->id }}" class="btn btn-primary">Saber mais</a>
             </div>
         </div>
 

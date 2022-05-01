@@ -16,6 +16,7 @@ use App\Http\Controllers\EventController;       /* importando o controller Event
 
 Route::get('/', [EventController::class, 'index']);
 Route::get('/eventos/criacao', [EventController::class, 'criacao']);
+Route::get('/eventos/{id}', [EventController::class, 'show']);
 Route::post('/eventos', [EventController::class, 'store']);
 //Route::get('/eventos/produtos', [EventController::class, 'produtos']);
 //Route::get('/eventos/contato', [EventController::class, 'contato']);

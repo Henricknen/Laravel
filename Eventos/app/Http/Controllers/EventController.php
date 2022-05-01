@@ -48,6 +48,14 @@ class EventController extends Controller
         return redirect('/')->with('msg', 'Evento marcado com sucesso !!!');       // criando a flash messages
     }
 
+    public function show($id) {
+
+        $event = Event::findOrFail($id);
+
+        return view('eventos.show', ['event' => $event]);
+
+    }
+
     public function contato() {
         return view('eventos.contato');
     }
