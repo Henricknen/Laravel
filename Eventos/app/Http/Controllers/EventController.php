@@ -28,6 +28,21 @@ class EventController extends Controller
         $event->descricao = $request->descricao;
         $event->privado = $request->privado;
 
+        /* Image upload */
+        if($request->hasFile('image') && $request->file('image')->isValid()) {
+
+            $requestImage = $request->image;
+
+            $extension = $requestImage->extension();
+
+            $imageName = md5($requestImage->getClientOriginalname() . strtotime("now") . "." . $extension);
+
+            $request->image->move(public_path('img/evento'), $imageName);
+
+            $event->image = $imageName;
+
+        }
+
         $event->save();
 
         return redirect('/')->with('msg', 'Evento marcado com sucesso !!!');       // criando a flash messages

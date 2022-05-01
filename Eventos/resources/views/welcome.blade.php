@@ -19,7 +19,7 @@
         @foreach ($events as $event)
 
         <div class="card col-md-3">
-            <img src="/img/festa.webp" alt="{{ $event->titulo }}">
+            <img src="/img/evento/{{ $event->image }}" alt="{{ $event->titulo }}">
             <div class="card-body">
                 <p class="card-date">29/04/2022</p>
                 <h5 class="card-title">{{ $event->titulo }}</h5>
