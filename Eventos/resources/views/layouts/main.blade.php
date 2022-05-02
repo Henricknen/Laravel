@@ -33,13 +33,31 @@
                                 <a href="/eventos/criacao" class="nav-link">Criar Eventos</a>
                             </li>
 
+                            @auth
                             <li class="nav-item">
-                                <a href="/eventos/produtos" class="nav-link">Produtos</a>
+                                <a href="/dasboard" class="nav-link">Meus eventos</a>
                             </li>
+                            <li class="nav-item">
+                                <form action="/logout" method="POST">
+                                    @csrf
+                                    <a href="/logout"
+                                     class="nav-link"
+                                      onclick="event.preventDefault();
+                                    this.closest('form').submit();">
+                                    Sair
+                                    </a>
+                                </form>
+                            </li>
+                            @endauth
 
+                            @guest
                             <li class="nav-item">
-                                <a href="/eventos/contato" class="nav-link">Contato</a>
+                                <a href="/login" class="nav-link">Entrar</a>
                             </li>
+                            <li class="nav-item">
+                                <a href="/register" class="nav-link">Cadastrar</a>
+                            </li>
+                            @endguest
                         </ul>
 
                 </div>
