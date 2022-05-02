@@ -182,6 +182,15 @@ header {
     margin: 20px 0;
 }
 
+#items-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+#items-lis li {
+    display: flex;
+}
+
 /*  Footer*/
 footer {
     text-align: center;

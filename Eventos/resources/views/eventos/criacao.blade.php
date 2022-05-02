@@ -31,6 +31,26 @@
                 <option value="1">Sim</option>
             </select>
         </div>
+        <div class="form group">
+            <label for="titulo">Adicione itens de infraestrutura:</label>
+            <div class="form-group">
+                <input type="checkbox" name="items[]" value="Luzes">Luzes
+            </div>
+            <div class="form-group">
+                <input type="checkbox" name="items[]" value="Palco">Palco
+            </div>
+            <div class="form-group">
+                <input type="checkbox" name="items[]" value="Musicos">Musicos
+            </div>
+            <div class="form-group">
+                <input type="checkbox" name="items[]" value="Bebidas">Bebidas
+            </div>
+            <div class="form-group">
+                <input type="checkbox" name="items[]" value="Som">Som
+            </div>
+
+        </div>
+
         <br>
         <input type="submit" class="btn btn-primary" value="Criar Evento">
     </form>
