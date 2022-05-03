@@ -18,16 +18,8 @@ Route::get('/', [EventController::class, 'index']);
 Route::get('/eventos/criacao', [EventController::class, 'criacao'])->middleware('auth');
 Route::get('/eventos/{id}', [EventController::class, 'show']);
 Route::post('/eventos', [EventController::class, 'store']);
-//Route::get('/eventos/produtos', [EventController::class, 'produtos']);
+
 //Route::get('/eventos/contato', [EventController::class, 'contato']);
 
+Route::get('/dashboard', [EventController::class, 'dashboard'])->middleware('auth');  // o usuario tem que estar logado para acessar esta view
 
-Route::middleware([
-    'auth:sanctum',
-    config('jetstream.auth_session'),
-    'verified'
-])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
-});

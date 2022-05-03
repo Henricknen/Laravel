@@ -35,7 +35,7 @@
 
                             @auth
                             <li class="nav-item">
-                                <a href="/dasboard" class="nav-link">Meus eventos</a>
+                                <a href="/dashboard" class="nav-link">Meus eventos</a>
                             </li>
                             <li class="nav-item">
                                 <form action="/logout" method="POST">
