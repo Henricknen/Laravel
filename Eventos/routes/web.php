@@ -18,6 +18,7 @@ Route::get('/', [EventController::class, 'index']);
 Route::get('/eventos/criacao', [EventController::class, 'criacao'])->middleware('auth');
 Route::get('/eventos/{id}', [EventController::class, 'show']);
 Route::post('/eventos', [EventController::class, 'store']);
+Route::delete('/eventos/{id}', [EventController::class,'destroy']);     // rota de deletar
 
 //Route::get('/eventos/contato', [EventController::class, 'contato']);
 

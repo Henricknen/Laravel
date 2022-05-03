@@ -9,7 +9,7 @@ use App\Models\User;
 
 class EventController extends Controller
 {
-    public function index() {       /* action index */
+    public function index() {                         /* action index */
 
         $search = request('search');
 
@@ -85,5 +85,11 @@ class EventController extends Controller
         return view('eventos.dashboard', ['eventos' => $events]);
     }
 
+    public function destroy($id) {
+
+        Event::findOrFail($id)->delete();  // encotrando esse evento do banco de dados pelo id passado na view
+
+        return redirect('/dashboard')->with('msg', 'Evento excluido com sucessso!!!');
+    }
 
 }
