@@ -16,6 +16,7 @@ use App\Http\Controllers\EventController;       /* importando o controller Event
 
 Route::get('/', [EventController::class, 'index']);
 Route::get('/eventos/criacao', [EventController::class, 'criacao'])->middleware('auth');
+Route::get('/eventos/crud_user', [EventController::class, 'crud_user']);
 Route::get('/eventos/{id}', [EventController::class, 'show']);
 Route::post('/eventos', [EventController::class, 'store']);
 Route::delete('/eventos/{id}', [EventController::class, 'destroy'])->middleware('auth');     // rota de deletar
@@ -26,3 +27,4 @@ Route::put('/eventos/update/{id}', [EventController::class, 'update'])->middlewa
 
 Route::get('/dashboard', [EventController::class, 'dashboard'])->middleware('auth');  // o usuario tem que estar logado para acessar esta view
 
+Route::post('/eventos/join/{id}', [EventController::class, 'joinEvent'])->middleware('auth');

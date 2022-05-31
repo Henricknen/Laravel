@@ -45,7 +45,7 @@ header {
 
 /* navbar */
 #navbar img {
-    width: 70px;
+    width: 50px;
 }
 
 #navbar {
@@ -111,7 +111,7 @@ header {
 }
 
 #events-container img {
-    max-height: 150px;
+    max-height: 250px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 }

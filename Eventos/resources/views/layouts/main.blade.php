@@ -33,6 +33,10 @@
                                 <a href="/eventos/criacao" class="nav-link">Criar Eventos</a>
                             </li>
 
+                            <li class="nav-item">
+                                <a href="/eventos/crud_user" class="nav-link">Cadastrar Usuario</a>
+                            </li>
+
                             @auth
                             <li class="nav-item">
                                 <a href="/dashboard" class="nav-link">Editar/ Excluir</a>
@@ -40,11 +44,9 @@
                             <li class="nav-item">
                                 <form action="/logout" method="POST">
                                     @csrf
-                                    <a href="/logout"
-                                     class="nav-link"
-                                      onclick="event.preventDefault();
-                                    this.closest('form').submit();">
-                                    Sair
+                                    <a href="/logout" class="nav-link" onclick="event.preventDefault();
+                                     this.closest('form').submit();">
+                                        Sair
                                     </a>
                                 </form>
                             </li>
@@ -69,12 +71,12 @@
                     @if(session('msg'))
                         <p class="msg">{{ session('msg') }}</p>
                     @endif
-                    @yield('content')
+        @yield('content')
                 </div>
             </div>
         </main>
         <footer>
-            <p>Luis Henrique S F &copy; 2022</p>
+            <p>Luis Henrique  &copy; 2022</p>
         </footer>
 
     </body>

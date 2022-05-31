@@ -4,12 +4,24 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Models\Event;
+//use App\Models\CrudUsu;     /* acesso ao mdoel CrudUsu */
+
+use App\Models\Event;       /* tenho acesso ao model Event */
 use App\Models\User;
 
 class EventController extends Controller
 {
+    /*public function index(){
+        $events = CrudUsu::all();
+
+        return view('welcome',['events' => $events]);
+    } */
+
+    //public function store(Request $request){
+
+
     public function index() {                         /* action index */
+
 
         $search = request('search');
 
@@ -21,7 +33,7 @@ class EventController extends Controller
 
         } else {
 
-            $events = Event::all();
+            $events = Event::all();     /* selecionando os dados do banco de dados */
 
         }
 
@@ -31,6 +43,22 @@ class EventController extends Controller
     public function criacao() {
         return view('eventos.criacao');
     }
+
+    public function crud_user() {
+        return view('eventos.crud_user');
+    }
+
+    /*public function store(Request $request) {
+
+    $event = new Event;
+    $event->nome = $request->nome;
+    $event->date = $request->date;
+    $event->cidade = $request->cidade;
+    $event->email = $request->email;
+
+    $event->save();
+
+    return redirect('/'); */
 
     public function store(Request $request) {
 
@@ -42,6 +70,8 @@ class EventController extends Controller
         $event->descricao = $request->descricao;
         $event->privado = $request->privado;
         $event->items = $request->items;
+
+
 
         /* Image upload */
         if($request->hasFile('image') && $request->file('image')->isValid()) {
@@ -63,10 +93,13 @@ class EventController extends Controller
 
         $event->save();
 
-        return redirect('/')->with('msg', 'Evento marcado com sucesso !!!');       // criando a flash messages
+        return redirect('/')->with('msg', 'Cradastro realizado !!!');       // criando a flash messages
     }
 
+
+
     public function show($id) {
+
 
         $event = Event::findOrFail($id);
 
@@ -89,7 +122,7 @@ class EventController extends Controller
 
         Event::findOrFail($id)->delete();  // encotrando esse evento do banco de dados pelo id passado na view
 
-        return redirect('/dashboard')->with('msg', 'Evento excluido com sucessso!!!');
+        return redirect('/dashboard')->with('msg', 'Excluido com sucessso!!!');
     }
 
     public function edit($id) {
@@ -122,7 +155,19 @@ class EventController extends Controller
 
         return redirect('/dashboard')->with('msg', 'Evento editado com sucessso!!!');
 
+    }
+
+    public function joinEvent($id) {
+
+        $user = auth()->user();
+
+        $user->eventAsParticipant()->attach($id);
+
+        $event = Event::findOrFail($id);
+
+        return redirect('/dashboard')->with('msg', 'Sua preseça esta confirmada no evento '. $event->titulo);
 
     }
+
 
 }

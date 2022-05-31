@@ -13,17 +13,17 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('events', function (Blueprint $table) {
+        Schema::create('crud_user', function (Blueprint $table)
+        {
             $table->id();
             $table->timestamps();
-            $table->string("titulo");
-            $table->text("descricao");
+            $table->string("nome");
+            $table->string("date");
             $table->string("cidade");
-            $table->boolean("privado");
+            $table->string("email");
 
         });
     }
-
     /**
      * Reverse the migrations.
      *
@@ -31,6 +31,7 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('events');
+        Schema::dropIfExists('crud_user');
     }
+
 };
