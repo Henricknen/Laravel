@@ -13,12 +13,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 use App\Http\Controllers\EventController;       /* importando o controller EventController */
+use App\Http\Controllers\CrudUserController;
 
 Route::get('/', [EventController::class, 'index']);
 Route::get('/eventos/criacao', [EventController::class, 'criacao'])->middleware('auth');
-Route::get('/eventos/crud_user', [EventController::class, 'crud_user']);
+Route::get('/eventos/crud_user', [CrudUserController::class, 'crud_user']);
 Route::get('/eventos/{id}', [EventController::class, 'show']);
 Route::post('/eventos', [EventController::class, 'store']);
+Route::post('/crud_usu', [CrudUserController::class, 'store']);
 Route::delete('/eventos/{id}', [EventController::class, 'destroy'])->middleware('auth');     // rota de deletar
 Route::get('/eventos/edit/{id}', [EventController::class, 'edit'])->middleware('auth');
 Route::put('/eventos/update/{id}', [EventController::class, 'update'])->middleware('auth');

@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-//use App\Models\CrudUsu;     /* acesso ao mdoel CrudUsu */
 
 use App\Models\Event;       /* tenho acesso ao model Event */
 use App\Models\User;
@@ -161,11 +160,11 @@ class EventController extends Controller
 
         $user = auth()->user();
 
-        $user->eventAsParticipant()->attach($id);
+        //$user->eventAsParticipant()->attach($id);
 
         $event = Event::findOrFail($id);
 
-        return redirect('/dashboard')->with('msg', 'Sua preseça esta confirmada no evento '. $event->titulo);
+        return redirect('/dashboard')->with('msg', 'Sua preseça esta confirmada no evento '. $event->tituloo);
 
     }
 
