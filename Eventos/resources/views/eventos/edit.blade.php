@@ -60,5 +60,6 @@
         <br>
         <input type="submit" class="btn btn-primary" value="Editar Evento">
     </form>
+    
 </div>
 @endsection

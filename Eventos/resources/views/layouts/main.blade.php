@@ -34,7 +34,7 @@
                             </li>
 
                             <li class="nav-item">
-                                <a href="/eventos/crud_user" class="nav-link">Cadastrar Usuario</a>
+                                <a href="/eventos/crud_user" class="nav-link">Novo Participante</a>
                             </li>
 
                             @auth
@@ -76,7 +76,7 @@
             </div>
         </main>
         <footer>
-            <p>Luis Henrique  &copy; 2022</p>
+            <p>Luis Henrique S. F  &copy; 2022</p>
         </footer>
 
     </body>

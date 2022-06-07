@@ -11,9 +11,9 @@ class CrudUserController extends Controller
 {
     public function index() {
 
-        $crud_user = CrudUsu::all();
+        $crud_users = CrudUsu::all();
 
-        return view('welcome',['crud_user' => $crud_user]);
+        return view('welcome',['crud_user' => $crud_users]);
 
     }
 
@@ -29,11 +29,24 @@ class CrudUserController extends Controller
         $user->date = $request->date;
         $user->cidade = $request->cidade;
         $user->email = $request->email;
-        $user->email = $request->email;
+
+        if($request->hasFile('image') && $request->file('image')->isValid()) {
+
+            $requestImage = $request->image;
+
+            $extension = $requestImage->extension();
+
+            $imageName = md5($requestImage->getClientOriginalName(). strtotime("now")) . "." . $extension;
+
+            $requestImage->move(public_path('img/participantes'), $imageName);
+
+            $user->image = $imageName;
+
+        }
 
         $user->save();
 
-        return redirect('/')->with('msg', 'Cradastro realizado !!!');
+        return redirect('/')->with('msg', 'Cadastro realizado!!!');
 
     }
 }

@@ -92,7 +92,7 @@ class EventController extends Controller
 
         $event->save();
 
-        return redirect('/')->with('msg', 'Cradastro realizado !!!');       // criando a flash messages
+        return redirect('/')->with('msg', 'Evento criado com sucesso!!!');       // criando a flash messages
     }
 
 
