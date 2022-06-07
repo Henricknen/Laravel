@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 use App\Models\Event;       /* tenho acesso ao model Event */
 use App\Models\User;
+use App\Models\CrudUsu;
 
 class EventController extends Controller
 {
@@ -35,8 +36,8 @@ class EventController extends Controller
             $events = Event::all();     /* selecionando os dados do banco de dados */
 
         }
-
-        return view('welcome',['events' => $events, 'search' => $search]);
+        $crud_usus = CrudUsu::all();
+        return view('welcome',['events' => $events, 'search' => $search, 'crud_usus' => $crud_usus]);
     }
 
     public function criacao() {
