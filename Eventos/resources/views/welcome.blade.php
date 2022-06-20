@@ -18,7 +18,7 @@
     <p class="subtitle">Veja os Eventos seguintes</p>
     @endif
 
-    <!------------------------------------------------------------------>
+    <p id="black">-------------------------------------------------------------------------------------------------------------------------------------------- Eventos: -------------------------------------------------------------------------------------------------------------------------------</p>
     <div id="cards-container" class="row">
         @foreach ($events as $event)
 
@@ -40,7 +40,7 @@
         @endif
     </div><br>
 
-    <!------------------------------------------------------------------>
+    <p id="black">------------------------------------------------------------------------------------------------------------------------------------------- Participantes: -----------------------------------------------------------------------------------------------------------------------</p>
 
     <div id="cards-container" class="row">
         @foreach ($crud_usus as $crud_usu)      <!-- tabela no plural e entidade no sigular -->
@@ -49,11 +49,14 @@
             <img src="/img/participantes/{{ $crud_usu->image }}" alt="{{ $crud_usu->nome }}">
             <div class="card-body">
                 <h5 class="card-title">{{ $crud_usu->nome }}</h5>
-                <a href="/participantes/{{ $crud_usu->id }}" class="btn btn-primary">Saber mais</a>
+                <h4 class="card-title">{{ $crud_usu->descricao }}</h4>
+                <h3 class="card-title">{{ $crud_usu->cidade }}</h3>
+                <h2 class="card-title">{{ $crud_usu->email }}</h2>
+               <!-- <a href="/participantes/{{ $crud_usu->id }}" class="btn btn-primary">Saber mais</a> -->
             </div>
         </div>
 
-        @endforeach  
+        @endforeach
 
     </div>
 </div>

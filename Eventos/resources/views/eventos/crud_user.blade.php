@@ -21,6 +21,10 @@
             <input type="date" class="form-control" id="date" name="date">
         </div>
         <div class="form group">
+            <label for="titulo">Descrição:</label>
+            <textarea name="descricao" id="descricao" class="form-control" placeholder="O que vai acontecer noo evento ?"></textarea>
+        </div>
+        <div class="form group">
             <label for="titulo">Cidade:</label>
             <input type="text" class="form-control" id="cidade" name="cidade" placeholder="ex: Pres Prudente">
         </div>
@@ -28,7 +32,7 @@
             <label for="titulo">email-e:</label>
             <input type="text" name="email" id="email" class="form-control" placeholder="ex: l.henrick@live.com">
         </div>
-        
+
             <br>
             <input type="submit" class="btn btn-primary" value="Salvar">
         </form>

@@ -10,7 +10,7 @@ body {
 }
 
 header {
-    background-color: #FFF;
+    background-color: rgb(255, 255, 255);
     border-bottom: 1px solid #CCC;
 }
 
@@ -220,7 +220,7 @@ img-preview{
 footer {
     text-align: center;
     background-color: #353E48;
-    color: white;
+    color: black;
     padding: 30px;
     position: absolute;
     bottom: 0;
@@ -229,4 +229,9 @@ footer {
 
 footer p {
     margin-bottom: 0;
+    font-weight: 900;
+}
+
+#black {
+    color: black;
 }

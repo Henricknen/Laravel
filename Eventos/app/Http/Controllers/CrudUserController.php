@@ -27,6 +27,7 @@ class CrudUserController extends Controller
 
         $user->nome = $request->nome;
         $user->date = $request->date;
+        $user->descricao = $request->descricao;
         $user->cidade = $request->cidade;
         $user->email = $request->email;
 
